@@ -3,9 +3,8 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Surface;
-import android.view.Window;
-import android.widget.TextView;
 import androidx.annotation.RequiresApi;
+import androidx.window.WindowProperties;
 
 public class MainActivity extends Activity {
   @Override public void onCreate(Bundle b) {
@@ -15,18 +14,18 @@ public class MainActivity extends Activity {
     } else if (Build.VERSION.SDK_INT >= 31) {
       setFrameRateApi31();
     }
-    TextView v = new TextView(this);
-    v.setText("Game Helio G100\n\nAndroid 16 / API 36\n120 FPS frame-rate request\nMali-G57 MP2\n\nProfiles:\nQQ飞车: com.tencent.tmgp.speedmobile\nSpeed Drifters: com.garena.game.fctw\n\n120 FPS support\n");
+    androidx.widget.AppCompatTextView v = new androidx.widget.AppCompatTextView(this);
+    v.setText("Game Helio G100\n\nAndroid 16 / API 36\n120 FPS frame-rate request\nMali-G57 MP2\n\nProfiles:\nQQ飞车: com.tencent.tmgp.speedmobile\nSpeed Drifters: com.garena.game.fctw\n\n120 FPS frame-rate request may not be honored by all devices.");
     v.setTextSize(17); v.setPadding(36,56,36,36); setContentView(v);
   }
 
   @RequiresApi(34)
   private void setFrameRateApi34() {
-    getWindow().setFrameRate(120.0f, Surface.FRAME_RATE_COMPATIBILITY_DEFAULT);
+    androidx.window.WindowCompat.setWindowFrameRate(this, 120.0f, Surface.FRAME_RATE_COMPATIBILITY_DEFAULT);
   }
 
   @RequiresApi(31)
   private void setFrameRateApi31() {
-    getWindow().setFrameRate(120.0f);
+    androidx.window.WindowCompat.setWindowFrameRate(this, 120.0f);
   }
 }
