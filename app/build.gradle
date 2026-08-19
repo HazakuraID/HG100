@@ -2,12 +2,12 @@ plugins { id 'com.android.application' }
 
 android {
     namespace 'com.mediatek.game'
-    compileSdk 36
+    compileSdk 35
     
     defaultConfig {
         applicationId 'com.mediatek.game'
-        minSdk 36
-        targetSdk 36
+        minSdk 31
+        targetSdk 35
         versionCode 1
         versionName '1.0.0'
     }
