@@ -22,4 +22,5 @@ android {
 
 dependencies {
     // Add your dependencies here
+    implementation 'androidx.window:window:1.0.0'
 }
