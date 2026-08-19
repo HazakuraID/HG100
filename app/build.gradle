@@ -23,4 +23,5 @@ android {
 dependencies {
     // Add your dependencies here
     implementation 'androidx.window:window:1.2.0'
+    implementation 'androidx.annotation:annotation:1.6.0'
 }
