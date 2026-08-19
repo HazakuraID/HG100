@@ -6,7 +6,7 @@ android {
     
     defaultConfig {
         applicationId 'com.mediatek.game'
-        minSdk 31
+        minSdk 21
         targetSdk 35
         versionCode 1
         versionName '1.0.0'
@@ -22,5 +22,5 @@ android {
 
 dependencies {
     // Add your dependencies here
-    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window:1.2.0'
 }
